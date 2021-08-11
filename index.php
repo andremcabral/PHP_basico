@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,6 +13,13 @@
 
 <p> FORMULÁRIO DE INSCRIÇÃO </p>
 <form action="script.php" method="post">
+<?php
+    $mensagemDeErro = isset($_SESSION['erro']) ? $_SESSION['erro'] : "";
+    if(!empty($mensagemDeErro))
+    {
+        echo $mensagemDeErro;
+    }
+?>
 <p>
 Seu nome: <input type="text" name="seu_nome" id="seu_nome">
 </p>
@@ -18,6 +29,13 @@ Sua idade: <input type="text" name="sua_idade">
 <p>
 <input type="submit" value="Enviar dados">
 </p>
+<?php
+    $mensagemDeSucesso = isset($_SESSION['sucesso']) ? $_SESSION['sucesso'] : "";
+    if(!empty($mensagemDeSucesso))
+    {
+        echo $mensagemDeSucesso;
+    }
+?>
 </form>
 </body>
 </html>
