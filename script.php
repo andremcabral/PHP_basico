@@ -33,12 +33,7 @@ else if(strlen($nome) > 30)
     header("location: index.php");
     return;
 }
-// else if(empty($idade))
-// {
-//     $_SESSION['erro'] = 'A idade não pode ser vazia, preencha corretamente';
-//     header("location: index.php");
-//     return;
-// }
+
 else if(!is_numeric($idade))
 {
     $_SESSION['erro'] = 'A idade precisa ser um número, preencha corretamente';
@@ -51,6 +46,5 @@ for($i = 0; $i < count($Categorias); $i++){
         $_SESSION['sucesso'] = "O nadador " .$nome ." compete na categoria " .$Categorias[$i][0];
         $_SESSION['erro'] = "";
         header("location: index.php");
-        // echo ("O nadador " .$nome ." compete na categoria " .$Categorias[$i][0]);
     }
 }
