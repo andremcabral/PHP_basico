@@ -1,16 +1,23 @@
-<?php
-$Categorias = [];
-$Categorias[] = ['Baby',0,5];
-$Categorias[] = ['Infantil',6,12];
-$Categorias[] = ['Adolescente',13,18];
-$Categorias[] = ['Adulto',19,40];
-$Categorias[] = ['Master',41,999];
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nadadores</title>
+</head>
+<body>
 
-$nome = "Andre";
-$idade = 44;
-
-for($i = 0; $i < count($Categorias); $i++){
-    if($idade >= $Categorias[$i][1] && $idade <= $Categorias[$i][2]){
-        echo $Categorias[$i][0];
-    }
-}
+<p> FORMULÁRIO DE INSCRIÇÃO </p>
+<form action="script.php" method="post">
+<p>
+Seu nome: <input type="text" name="seu_nome" id="seu_nome">
+</p>
+<p>
+Sua idade: <input type="text" name="sua_idade">
+</p>
+<p>
+<input type="submit" value="Enviar dados">
+</p>
+</form>
+</body>
+</html>
